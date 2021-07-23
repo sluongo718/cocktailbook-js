@@ -19,7 +19,7 @@ class Cocktial{
         fetch(cocktailURL)
         .then(response => response.json())
         .then(cocktails => {
-            for(let cocktail of cocktail.data) {
+            for(let cocktail of cocktails.data) {
                 let newCocktailList = new Cocktial(cocktail)
             }
         })
