@@ -10,9 +10,8 @@ class Cocktail{
         this.ingredients = cocktail.attributes.ingredients 
 
         Cocktail.allCocktails.push(this)
-       
+        this.renderCocktail()
     }
-
 
 
     static fetchCocktails() {
@@ -44,6 +43,24 @@ class Cocktail{
             let newCocktail = new Cocktail(cocktail.data)
             cocktailForm.reset()
         })
+    }
+
+    renderCocktail() {
+        const cocktailLi = document.createElement("li")
+
+        cocktailLi.dataset.id = this.id
+        cocktailList.appendChild(cocktailLi)
+        const h3 = document.createElement("h3")
+        h3.className=("card-header")
+        h3.innerText = this.name 
+        const img = document.createElement("img")
+        img.src = this.image 
+        img.width = 200 
+        const p = document.createElement("p")
+        p.className = "card-text"
+        p.innerText = this.instructions
+
+        cocktailLi.append( h3, img, p)
     }
 
 }

@@ -4,6 +4,7 @@ const cocktailForm = document.getElementById("cocktail-form")
 const imageInput = document.getElementById("input-cocktail-url")
 const cocktailNameInput = document.getElementById("input-cocktail-name")
 const instructionsInput = document.getElementById("input-cocktail-instructions")
+const cocktailList = document.getElementById("cocktail-list")
 
 cocktailForm.addEventListener("submit", Cocktail.submitCocktail)
 Cocktail.fetchCocktails()
