@@ -60,7 +60,21 @@ class Cocktail{
         p.className = "card-text"
         p.innerText = this.instructions
 
-        cocktailLi.append( h3, img, p)
+        const deleteBtn = document.createElement("button")
+        deleteBtn.className = "btn btn-primary btn-sm"
+        deleteBtn.innerText = "Delete Cocktail"
+        deleteBtn.addEventListener("click", this.deleteCocktail)
+
+        cocktailLi.append( h3, img, p, deleteBtn)
+    }
+
+    deleteCocktail() {
+        const cocktailId = this.parentElement.dataset.id 
+
+        fetch(`${cocktailURL}/${cocktailId}`,{
+            method: "DELETE"
+        })
+        this.parentElement.remove()
     }
 
 }
