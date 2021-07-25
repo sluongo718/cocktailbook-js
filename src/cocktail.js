@@ -59,19 +59,30 @@ class Cocktail{
         const p = document.createElement("p")
         p.className = "card-text"
         p.innerText = this.instructions
-
+        // delete button
         const deleteBtn = document.createElement("button")
         deleteBtn.className = "btn btn-primary btn-sm"
         deleteBtn.innerText = "Delete Cocktail"
         deleteBtn.addEventListener("click", this.deleteCocktail)
-
+        // ingredient form
         const ingredientForm = document.createElement("form")
         ingredientForm.innerHTML +=  `<input type="text" id="ingredient-input" placeholder="Ingredient">
         <input type="submit" value="Add">`
 
         ingredientForm.addEventListener("submit", Ingredient.createIngredient)
 
-        cocktailLi.append( h3, img, p, deleteBtn, ingredientForm)
+        const ingredientList = document.createElement("ul")
+        ingredientList.dataset.id = this.id
+
+        this.ingredients.forEach(ingredient => {
+
+            let newIngred = new Ingredient(ingredient)
+
+            newIngred.renderIngredient(ingredientList)
+            
+        });
+
+        cocktailLi.append( h3, img, ingredientList, ingredientForm, p, deleteBtn)
     }
 
     deleteCocktail() {
