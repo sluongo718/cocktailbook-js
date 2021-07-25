@@ -71,7 +71,7 @@ class Cocktail{
 
         ingredientForm.addEventListener("submit", Ingredient.createIngredient)
 
-        cocktailLi.append( h3, img, p, deleteBtn)
+        cocktailLi.append( h3, img, p, deleteBtn, ingredientForm)
     }
 
     deleteCocktail() {
