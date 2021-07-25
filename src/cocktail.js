@@ -65,6 +65,12 @@ class Cocktail{
         deleteBtn.innerText = "Delete Cocktail"
         deleteBtn.addEventListener("click", this.deleteCocktail)
 
+        const ingredientForm = document.createElement("form")
+        ingredientForm.innerHTML +=  `<input type="text" id="ingredient-input" placeholder="Ingredient">
+        <input type="submit" value="Add">`
+
+        ingredientForm.addEventListener("submit", Ingredient.createIngredient)
+
         cocktailLi.append( h3, img, p, deleteBtn)
     }
 
