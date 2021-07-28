@@ -61,4 +61,12 @@ class Ingredient{
         })
     }
 
+    deleteIngredient() {
+        const ingredId = this.parentElement.dataset.id 
+        fetch(`${ingredientsURL}/${ingredId}`, {
+            method: "DELETE"
+        })
+        this.parentElement.remove()
+    }
+
 }

@@ -1,0 +1,20 @@
+html, body {
+    background-color: aqua;
+    margin: 0 auto;
+}
+#title {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#cocktail-form {
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+#cocktail-list {
+    text-align: center;
+    margin: 0 auto;
+
+}
