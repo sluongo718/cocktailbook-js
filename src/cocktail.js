@@ -13,6 +13,15 @@ class Cocktail{
         this.renderCocktail()
     }
 
+    static renderCocktails(cocktails){
+        
+        cocktailList.innerHTML = ""
+      for (let cocktail of cocktails){
+        cocktail.renderCocktail()
+
+    }
+}
+
 
     static fetchCocktails() {
         fetch(cocktailURL)
@@ -22,10 +31,11 @@ class Cocktail{
                 let newCocktailList = new Cocktail(cocktail)
             }
         })
+
     }
 
     static submitCocktail(ct) {
-        ct.preventDefault()
+         ct.preventDefault()
         fetch(cocktailURL, {
             method: "POST",
             headers: {
