@@ -9,7 +9,7 @@ const filterBtn = document.getElementById("filterBtn")
 const allDrinksBtn = document.getElementById("allDrinks")
 
 filterBtn.addEventListener("click", function(e){
-  console.log("filter click" , filterBtn.getAttribute("value"))
+ 
    if (filterBtn.getAttribute("value") === "off"){
     filterBtn.setAttribute("value", "on")
     filterBtn.innerText = "see all drinks"
@@ -25,13 +25,6 @@ filterBtn.addEventListener("click", function(e){
 
 
 })
-
-
-
-  allDrinksBtn.addEventListener("click", function(e){
-    cocktailList.innerText = ""
-    Cocktail.renderCocktails(Cocktail.allCocktails)
-  })
 
 
 cocktailForm.addEventListener("submit", Cocktail.submitCocktail)
