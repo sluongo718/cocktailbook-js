@@ -9,15 +9,33 @@ const filterBtn = document.getElementById("filterBtn")
 const allDrinksBtn = document.getElementById("allDrinks")
 
 filterBtn.addEventListener("click", function(e){
-  let filteredDrinks = Cocktail.allCocktails.filter(drink => drink.name  !== "irish coffee")
+  console.log("filter click" , filterBtn.getAttribute("value"))
+   if (filterBtn.getAttribute("value") === "off"){
+    filterBtn.setAttribute("value", "on")
+    filterBtn.innerText = "see all drinks"
+    let filteredDrinks = Cocktail.allCocktails.filter(drink => drink.name  !== "irish coffee")
+    Cocktail.renderCocktails(filteredDrinks)
+   } else {
+    filterBtn.setAttribute("value", "off")
+    filterBtn.innerText = "filter irish coffee"
+    Cocktail.renderCocktails(Cocktail.allCocktails)
+   }
+ 
+  
 
-  Cocktail.renderCocktails(filteredDrinks)
 
 })
 
 
 
+  allDrinksBtn.addEventListener("click", function(e){
+    cocktailList.innerText = ""
+    Cocktail.renderCocktails(Cocktail.allCocktails)
+  })
+
 
 cocktailForm.addEventListener("submit", Cocktail.submitCocktail)
+  
+// init application , fetch all the cocktails from db
 Cocktail.fetchCocktails()
 

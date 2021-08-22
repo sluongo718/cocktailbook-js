@@ -16,8 +16,9 @@ class Cocktail{
     static renderCocktails(cocktails){
         
         cocktailList.innerHTML = ""
-      for (let cocktail of cocktails){
-        cocktail.renderCocktail()
+        console.log("renderCocktails cocktailList" , cocktails)
+         for (let cocktail of cocktails){
+         cocktail.renderCocktail()
 
     }
 }
@@ -57,7 +58,7 @@ class Cocktail{
 
     renderCocktail() {
         const cocktailLi = document.createElement("li")
-
+        console.log("render cocktail item")
         cocktailLi.dataset.id = this.id
         cocktailList.appendChild(cocktailLi)
         const h3 = document.createElement("h3")
